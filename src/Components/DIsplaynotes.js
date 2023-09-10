@@ -32,8 +32,10 @@ function DIsplaynotes() {
 
   const handleNotes = (e) => {
     if(e.key === "Enter" && !e.shiftKey){
-      e.preventDefault();
+     e.preventDefault()
     if (newNote.trim() !== "") {
+      // e.preventDefault();
+
       const newNoteObj = {
         text: newNote,
         group: selectedGroupName,
@@ -53,6 +55,30 @@ function DIsplaynotes() {
       setNotes(existingNotes[selectedGroupName]);
       setNewNote("");
     }
+    }
+
+    
+  };
+  const handleSendClick = () => {
+    if (newNote.trim() !== "") {
+      const newNoteObj = {
+        text: newNote,
+        group: selectedGroupName,
+        created: new Date().toISOString(),
+      };
+  
+      // Load existing notes for the selected group
+      const existingNotes = JSON.parse(localStorage.getItem('notes')) || {};
+  
+      // Update the notes for the selected group
+      existingNotes[selectedGroupName] = existingNotes[selectedGroupName] || [];
+      existingNotes[selectedGroupName].push(newNoteObj);
+  
+      // Save the updated data back to localStorage
+      localStorage.setItem("notes", JSON.stringify(existingNotes));
+  
+      setNotes(existingNotes[selectedGroupName]);
+      setNewNote("");
     }
   };
 
@@ -110,7 +136,7 @@ function DIsplaynotes() {
               onKeyDown={handleNotes}
             ></textarea>
            
-            <img src={SendButton} alt="" onClick={handleNotes}/>
+            <img src={SendButton} alt="" onClick={handleSendClick}/>
           
           </div>
         </div>
