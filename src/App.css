@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  font-family: Roboto;
+}
+
+
+.container{
+  display: flex;
+}
+.App {
+  /* z-index: 10; */
+  background: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
