@@ -1,15 +1,25 @@
-.Right-comp {
-    /* display: inline-block; */
-    width: 70vw;
+.Right-comp1 {
+    width: 100vw;
     height: 100vh;
-    background-color: #F7ECDC;
+    background-color: #F7ECDC ;
+    overflow: hidden;
 }
-#right-comp{
+/* #right-comp{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+} */
+.backword{
+    margin-left: 4%;
+    margin-right: 4%
 }
 
+.backword a{
+    font-size: large;
+    text-decoration: none;
+    color: black;
+    font-size: 200%;
+}
 .image{
     display: flex;
     justify-content: center;
@@ -26,12 +36,13 @@
     justify-content: center;
 }
 
-.notes-header-container {
+.notes-header-container1 {
     background-color: #E8E8E8;
     font-size: 100%;
     font-weight: 500;
     display: flex;
     align-items: center;
+    width: 100vw;
 
 }
 .selected-group{
@@ -43,10 +54,10 @@
     font-size: 190%;
     margin: 15% 0 0 22%;
 }
-.notesinput{
+.notesinput1{
     /* width: 100%; */
     /* width: fit-content; */
-    width: 70vw;
+    width: 100vw;
     height:31.9vh ;
     background-color:
     #CCCCCC;
@@ -59,18 +70,17 @@
     
 }
 
-
-.notesinput textarea {
+.notesinput1 textarea {
     font-size: large;
-    width: 64vw;
-    height: 26vh;
+    width: 90vw;
+    height: 22vh;
     border-radius: 5px;
 }
 
-.notesinput img{
+.notesinput1 img{
     position: absolute;
     right: 7%;
-    bottom: 15%;
+    bottom: 22%;
     cursor: pointer;
 }
 

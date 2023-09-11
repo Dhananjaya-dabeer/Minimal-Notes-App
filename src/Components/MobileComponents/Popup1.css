@@ -1,47 +1,57 @@
-.pop-up{
+.pop-up1{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color:white;
+    background-color: white;
     position: absolute;
     height: 30%;
-    width: 40%;
+    width: 78%;
     top: 35%;
-    left: 30%;
+    left: 12%;
     border: 2px solid #CCCCCC;
     border-radius: 8px;
     
 }
-.header{
+.header1{
     margin-left: 2%;
+    font-size: 100%;
 }
-.groupname{
+.groupname1 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
+.choose-colour1 h3{
+    font-size: 13px;
+}
 
-.groupname input {
+.groupname1 h3{
+    font-size: 13px;
+}
+
+.groupname1 input {
     width: 50%;
     height:100% ;
+    font-size: 11px;
     border-radius:18px ;
 }
 
-.choose-colour{
+.choose-colour1{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
-.colors{
+.colors1{
     display: flex;
+    
 }
-.colors div {
-width: 40px;
-height: 40px;
-border-radius: 50%;
-margin: 5px;
-cursor: pointer;
+.colors1 div {
+    width: 16px;
+    height: 23px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
 
 }
 
@@ -94,17 +104,18 @@ cursor: pointer;
 
 }
 
-.butn{
+.butn1{
     display: flex;
-    justify-content:right;
+    justify-content:center;
     margin-bottom: 1.5%;
 }
 
-#butn {
+#butn1 {
 background-color: black;
 color: white;
-width: 20%;
-height: 150%;
+font-size: 10px;
+width: 50%;
+height: 120%;
 margin: 0 3% 0 0;
 border-radius: 6px;
 cursor: pointer;

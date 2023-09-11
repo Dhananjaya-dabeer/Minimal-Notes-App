@@ -1,63 +1,35 @@
 import "./App.css";
-import DIsplaynotes from "./Components/DIsplaynotes";
-import Groups from "./Components/Groups";
-import Popup from "./Components/Popup";
-import Context from "./myContext";
+import DesktopComp from "./Components/DesktopComp";
 import { useEffect, useState } from "react";
+import MobileComp from "./Components/MobileComponents/MobileComp";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  let [popUp, setPopUp] = useState(false);
-  let [groups, setGroups] = useState([])
-  let [activeGroupName, setActiveGroupName] = useState('')
-  let [purple, setPurple] = useState(false)
-  let [pink, setPink] = useState(false)
-  let [skyblue, setSkyBlue] = useState(false)
-  let [orange, setOrange] = useState(false)
-  let [blue, setBlue] = useState(false)
-  let [cyan, setCyan] = useState(false)
-  const [selectedGroupName, setSelectedGroupName] = useState("");
-  let popUpHandler = () => {
-    setPopUp(false);
-  };
- let array = [{className:'purple',colors:purple },{className:'pink',colors:pink},{className:'skyblue',colors:skyblue},{className:'orange',colors:orange},{className:'blue',colors:blue}, {className:'cyan',colors:cyan }]
- 
-  const state = {
-    popUp, 
-    setPopUp,
-    groups,
-    setGroups,
-    activeGroupName,
-    setActiveGroupName,
-    purple, 
-    setPurple,
-    pink, 
-    setPink,
-    skyblue,
-    setSkyBlue,
-    orange,
-    setOrange,
-    blue,
-    setBlue,
-    cyan, 
-    setCyan,
-    array,
-    selectedGroupName,
-    setSelectedGroupName,
-  }
-
+  const [isMobile, setIsMobile] = useState(false);
+  
   useEffect(() => {
+    // Check the screen width and set the 'isMobile' state accordingly
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+    };
 
-  },[groups])
+    handleResize(); // Check the initial screen width
+    window.addEventListener("resize", handleResize); // Add a resize event listener
+
+    return () => {
+      // Clean up the event listener
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isMobile]);
+
+
   return (
-    <Context.Provider value={state}>
-      <div className={popUp ? "App" : "nothing"} onClick={popUpHandler}>
-        <div className="container">
-          <Groups />
-          <DIsplaynotes />
-        </div>
-        {popUp ? <Popup /> : null}
-      </div>
-    </Context.Provider>
+    <div>
+      {isMobile ?
+       (<BrowserRouter>   <MobileComp/>     </BrowserRouter>)
+       : (<DesktopComp/>) }
+
+    </div>
   );
 }
 
