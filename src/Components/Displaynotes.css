@@ -4,11 +4,7 @@
     height: 100vh;
     background-color: #F7ECDC;
 }
-#right-comp{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
 
 .image{
     display: flex;
