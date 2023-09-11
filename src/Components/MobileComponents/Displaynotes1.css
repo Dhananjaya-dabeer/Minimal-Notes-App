@@ -37,6 +37,8 @@
 }
 
 .notes-header-container1 {
+    position: absolute;
+    top: 0;
     background-color: #E8E8E8;
     font-size: 100%;
     font-weight: 500;
