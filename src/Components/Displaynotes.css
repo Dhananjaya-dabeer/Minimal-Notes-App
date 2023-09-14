@@ -72,6 +72,8 @@
 
 .chat-box{
     color: black;
+    max-height: 58.2vh;
+    overflow-y: auto;
 }
 .chat-message{
     display: flex;

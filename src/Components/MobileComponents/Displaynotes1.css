@@ -85,8 +85,10 @@
     cursor: pointer;
 }
 
-.chat-box{
+.chat-box1{
+    max-height:58.2vh;
     color: black;
+    overflow-y: auto;
 }
 .chat-message{
     display: flex;

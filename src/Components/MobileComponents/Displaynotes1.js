@@ -122,7 +122,7 @@ function Displaynotes1() {
         </div>
       )}
       {dataFromContext.selectedGroupName && (
-        <div className="chat-box">
+        <div className="chat-box1">
           {notes.map((note, index) => (
             <div className="chat-message">
               <div className="time-stamp">
